@@ -3,5 +3,38 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Todo List</h1>
+    <h1 class="display-4 my-2">Todo List</h1>
+    <p class="mt-4 lead fw-bold">Add a new task</p>
+    <form method="POST" onsubmit="addItem()">
+        <label for="addName">Task:</label>
+        <input type="text" id="addName"/>
+        <input type="submit" value="Add"/>
+    </form>
+    <hr />
+    <div id="editForm">
+        <p class="mt-4 lead fw-bold">Edit</p>
+        <form onsubmit="updateItem()">
+            <input type="hidden" id="editId" />
+            <label for="editName">Task:</label>
+            <input type="text" id="editName" />
+            <input type="checkbox" id="editIsComplete" />
+            <input type="submit" value="Save" />
+            <a onclick="closeInput()"><i class="bi bi-x-circle h5"></i></a>
+        </form>
+        <hr />
+    </div>
+
+    <p class="lead mt-2" id="counter"></p>
+
+    <div class="table">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Is Complete</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tbody id="todoItems"></tbody>
+        </table>
+    </div>
 </div>
