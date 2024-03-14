@@ -21,22 +21,27 @@ function displayItems(data) {
         isCompleteCheckbox.type = 'checkbox';
         isCompleteCheckbox.disabled = true;
         isCompleteCheckbox.checked = item.isComplete;
+        isCompleteCheckbox.classList.add('form-check-input');
 
         let editButton = button.cloneNode(false);
         editButton.innerText = 'Edit';
         editButton.setAttribute('onClick', `displayEditForm(${item.id})`);
+        editButton.classList.add('btn', 'btn-warning');
 
         let deleteButton = button.cloneNode(false);
         deleteButton.innerText = 'Delete';
         deleteButton.setAttribute('onClick', `deleteItem(${item.id})`);
+        deleteButton.classList.add('btn', 'btn-danger');
 
         let tr = tBodyTodoItems.insertRow();
 
         let td1 = tr.insertCell(0);
         let textNode = document.createTextNode(item.name);
+        td1.classList.add('align-middle');
         td1.appendChild(textNode);
 
         let td2 = tr.insertCell(1);
+        td2.classList.add('align-middle');
         td2.appendChild(isCompleteCheckbox);
 
         let td3 = tr.insertCell(2);

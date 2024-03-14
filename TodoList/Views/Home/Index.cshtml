@@ -7,8 +7,8 @@
     <p class="mt-4 lead fw-bold">Add a new task</p>
     <form method="POST" onsubmit="addItem()">
         <label for="addName">Task:</label>
-        <input type="text" id="addName"/>
-        <input type="submit" value="Add"/>
+        <input class="form-control w-25" placeholder="Enter a new task!" type="text" id="addName"/>
+        <input class="btn btn-primary" type="submit" value="Add" />
     </form>
     <hr />
     <div id="editForm">
@@ -16,25 +16,25 @@
         <form onsubmit="updateItem()">
             <input type="hidden" id="editId" />
             <label for="editName">Task:</label>
-            <input type="text" id="editName" />
-            <input type="checkbox" id="editIsComplete" />
-            <input type="submit" value="Save" />
-            <a onclick="closeInput()"><i class="bi bi-x-circle h5"></i></a>
+            <input class="form-control w-25" type="text" id="editName" />
+            <input class="form-check-input" type="checkbox" id="editIsComplete" />
+            <input class="btn btn-success" type="submit" value="Save" />
+            <a onclick="closeInput()"><i class="bi bi-x-circle-fill h5 border-dark"></i></a>
         </form>
         <hr />
     </div>
 
     <p class="lead mt-2" id="counter"></p>
 
-    <div class="table">
-        <table>
+    <table class="table">
+        <thead>
             <tr>
                 <th>Name</th>
                 <th>Is Complete</th>
                 <th></th>
                 <th></th>
             </tr>
-            <tbody id="todoItems"></tbody>
-        </table>
-    </div>
+        </thead>
+        <tbody id="todoItems"></tbody>
+    </table>
 </div>
