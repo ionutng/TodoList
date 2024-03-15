@@ -7,19 +7,6 @@ a {
     margin-bottom: 16px;
 }
 
-table {
-    border: 1px solid;
-}
-
-th {
-    background-color: ghostwhite;
-    padding: 8px;
-}
-
-td {
-    padding: 8px;
-}
-
 button {
     background-color: aliceblue;
     border: 1px solid grey;
